@@ -1,0 +1,103 @@
+num1=int(input("Введите первое число: "))
+num2=int(input("Введите второе число: "))
+print("""Доступные действия: 
+      1. Сложение. 
+      2. Вычитание.  
+      3. Умножение.  
+      4. Деление. 
+      5. Целочисленное деление. 
+      6. Поиск остатка от деления. 
+      7. Возведение в степень. 
+      8. Сравнение. 
+      9. Побитовое И (AND). 
+      10. Побитовое ИЛИ (OR). 
+      11. Побитовое ИСКЛЮЧАЮЩЕЕ ИЛИ. 
+      12. Побитовое НЕ. 
+      13. Побитовый сдвиг влево. 
+      14. Побитовый сдвиг вправо. """)
+while True:
+    try:
+        operator = int(input("Введите номер действия: "))
+        if operator >= 1 and operator <= 14:
+            break
+        else:
+            print("Вы ввели некорректное действие. Попробуйте снова.")
+    except ValueError:
+        print("Вы ввели не число. Попробуйте снова.")
+
+if operator == 1:
+    res_slozh=num1+num2
+    print("Результат сложения: ", res_slozh)
+
+elif operator == 2:
+    res_vich=num1-num2
+    print("Результат вычитания: ", res_vich)
+
+elif operator == 3:
+    res_umn=num1*num2
+    print("Результат умножения: ", res_umn)
+
+elif operator == 4:
+    if num2 == 0:
+        print("На 0 делить нельзя.")
+    else:
+        res_delen=num1/num2
+        print("Результат деления: ", res_delen)
+elif operator == 5:
+    if num2 == 0:
+        print("На 0 делить нельзя.")
+    else:
+        res_celdelen = num1 // num2
+        print("Результат целочисленного деления: ", res_celdelen)
+
+elif operator == 6:
+    if num2 == 0:
+        print("На 0 делить нельзя.")
+    else:
+        res_ost = num1 % num2
+        print("Результат поиска остатка: ", res_ost)
+
+elif operator == 7:
+    res_step=num1**num2
+    print("Результат возведения в степень: ", res_step)
+
+elif operator == 8:
+    if num1 > num2:
+        print(f"{num1} больше, чем {num2}.")
+    elif num1 < num2:
+        print(f"{num1} больше, чем {num2}.")
+    else:
+        res_srav = num1 is num2
+        if res_srav is True:
+            print(f"Числа равны.")
+        else:
+            print()
+
+elif operator == 9:
+    res_biti=num1&num2
+    print("<Результат побитового И: ", res_biti)
+
+elif operator == 10:
+    res_bitili = num1|num2
+    print("Результат побитового ИЛИ: ", res_bitili)
+
+elif operator == 11:
+    res_isklili = num1^num2
+    print("Результат ИСКЛЮЧАЮЩЕГО ИЛИ: ", res_isklili)
+
+elif operator == 12:
+    res_not1 = ~num1
+    res_not2 = ~num2
+    print("Результат побитового НЕ первого числа: ", res_not1)
+    print("Результат побитового НЕ второго числа: ", res_not2)
+
+elif operator == 13:
+    res_left = num1 << num2
+    print("Результат побитового сдвига влево: ", res_left)
+
+elif operator == 14:
+    res_right = num1>>num2
+    print("Результат побитового сдвига вправо: ", res_right)
+
+
+
